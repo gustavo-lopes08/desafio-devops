@@ -3,7 +3,7 @@ docker-compose up -d
 
 Aplicação Backend:
 
-- A aplicação foi hospedada em um servidor NGINX servindo uma api PHP que é responsavel por performar uma query no mariaDB e então devolver os dados armazenados em forma de JSON.
+- A aplicação foi hospedada em um servidor NGINX servindo uma api PHP (pasta app) que é responsavel por performar uma query no mariaDB e então devolver os dados armazenados em forma de JSON.
 
 - Para retornar os dados é preciso fazer um get request para o endereço localhost:8000
 
