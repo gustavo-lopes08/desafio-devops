@@ -17,7 +17,6 @@ Aplicação Frontend:
 
 - Optei pelo express para que pudesse hospedar o frontend independente do backend
 
-- O frontend roda no endereço localhost:3000 que disponibiliza uma paǵina com um botão que irá performar o get request para a aplicação backend
+- O frontend roda no endereço localhost:3000 que disponibiliza uma paǵina com um botão que irá performar o get request utilizando o axios para a aplicação backend
 
 
-O docker compose também realizará o deploy de um container redis, porém o mesmo não foi utilizado na aplicação.
