@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<h2>Perform a get Request</h2>
+
+<div id="swapi">
+<button type="button" onclick="loadNGINX()">GET FROM NGINX</button>
+</div>
+
+<br>
+
+<div id="nginx">
+<button type="button" onclick="loadSWAPI()">GET FROM SWAPI</button>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+function loadNGINX() {
+	axios.get('http://desafio-devops_ngix_1')
+		.then(response => {
+			document.getElementById('swapi').innerHTML = JSON.stringify(response.data);
+	});
+}
+
+function loadSWAPI() {
+	axios.get('https://swapi.co/api/people/1/')
+		.then(response => {
+			document.getElementById('nginx').innerHTML = JSON.stringify(response.data);
+		});
+}
+</script>
+
+</body>
+</html>
+
