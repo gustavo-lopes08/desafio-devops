@@ -3,7 +3,7 @@ docker-compose up -d
 
 Aplicação Backend:
 
-- A aplicação foi hospedada em um servidor NGINX servindo uma api PHP (pasta app) que é responsavel por performar uma query no mariaDB e então devolver os dados armazenados em forma de JSON.
+- A aplicação foi hospedada em um servidor NGINX servindo uma api PHP (pasta app) que é responsavel por performar um request para o redis, caso a chave não seja encontrada, a requisição então será feita para o mariaDB que irá devolver os dados armazenados em forma de JSON.
 
 - Para retornar os dados é preciso fazer um get request para o endereço localhost:8000
 
@@ -13,10 +13,8 @@ Obs: É possível acessar a pagina phpinfo() acessando o endereço localhost:800
 
 Aplicação Frontend:
 
-- O frontend foi desenvolvido utilizando nodejs com o framework express, que foi usado para servir o index.html.
+- O frontend foi desenvolvido utilizando nodejs com o framework express
 
 - Optei pelo express para que pudesse hospedar o frontend independente do backend
 
-- O frontend roda no endereço localhost:3000 que disponibiliza uma paǵina com um botão que irá performar o get request utilizando o axios para a aplicação backend
-
-
+- O frontend roda no endereço localhost:3000 que irá performar o get request utilizando o axios para o redis, caso a chave não seja encontrada, a requisição será direcionada para a aplicação backend
